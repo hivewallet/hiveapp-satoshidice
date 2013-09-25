@@ -1,0 +1,196 @@
+body {
+  background: #309330 url(../img/dice-bg.png) no-repeat center;
+  background-size: cover;
+  color: white;  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.screen {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: scroll;
+  -webkit-transition: all 0.3s ease-out;
+  -webkit-transform: translate3d(100%,0,0);
+}
+  .screen.left {
+    -webkit-transform: translate3d(-100%,0,0);
+  }
+  .screen.center {
+    -webkit-transform: translate3d(0,0,0);
+  }
+  
+.green-cl {
+  color: #2b9519;
+} 
+
+.red-cl {
+  color: #de140a;
+}
+
+.bet-list {
+  padding: 0.75em 0.75em 7.9em;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+  .bet-list .item { 
+    background: rgba(0,0,0,0.3);
+    padding: 0;
+    margin: 0 0 0.75em 0;
+    overflow: hidden;
+  }
+    .bet-list .item div {
+      width: 33.33333%;
+      margin: 0;
+      float: left;
+      line-height: 1.5em;
+      padding: 0.9em 1.1em;
+    }
+    .bet-list .item .center {
+      font-size: 1.2em;
+      padding: 0.5em 0.4em;
+    }
+      .bet-list .item .center input {
+        width: 90%;
+        border-radius: 5px;
+        border: none;
+        font-size: 0.8em;
+        padding: 0.3em 0.5em;
+        margin: 0.1em 0;
+      }
+      .bet-list .item .center .small {
+        font-size: 0.6em;
+      }
+    .bet-list .item .right {
+      text-align: right;
+    }
+
+.bet-summary {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(1, 31, 0, 0.92);
+}
+  .bet-summary div { 
+    width: 33.33333%;
+    margin: 0;
+    float: left;
+    line-height: 1.5em;
+    padding: 0.4em;
+  }
+  .bet-summary .left {
+    font-weight: bold;
+    font-size: 1.6em;
+    padding: 1.8em 0.7em 0;
+    text-align: center;
+  }
+  .bet-summary .center {
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    left: 1em;
+    -webkit-transition: top 0.2s ease;
+    position: relative;
+    top: 0;
+  }
+    .bet-summary .center:hover {
+      top: -3px;
+    }
+    .bet-summary .center img {
+      display: block;
+      margin: 0 auto;
+    }
+  .bet-summary .right {
+    font-size: 1.5em;
+    padding: 1.4em 0.5em 0;
+    line-height: 1em;
+    text-align: right;
+  }
+    .bet-summary .right .small {
+      font-size: 0.47em;
+      display: block;
+    }
+    .bet-summary .icon-eye-open {
+      cursor: pointer;
+      position: relative;
+      top: 0;
+      -webkit-transition: top 0.2s ease;
+    }
+      .bet-summary .icon-eye-open:hover {
+        top: -2px;
+      }
+
+.dice-stats {
+  padding: 0.75em;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+  .dice-stats .left, .dice-stats .right { 
+    margin: 0 1.25%;
+    width: 47.5%;
+    float: left;
+  }
+  .dice-stats .box {
+    background: rgba(0,0,0,0.3);
+    padding: 1em;
+  }
+  .dice-stats .btn {
+    padding: 1em;
+    margin: 1em 0;
+    display:inline-block;
+    background: rgba(255,255,255,0.8);
+    color: black;
+    cursor: pointer;
+  }
+    .dice-stats .btn:hover {
+      background: rgba(255,255,255,1);
+    }
+  .dice-stats h3 {
+    margin: 0;
+    padding: 0;
+    line-height: 0.5em;
+  }
+  .dice-stats dl {
+    overflow: hidden;
+  }
+    .dice-stats dt, .dice-stats dd {
+      display: block;
+      margin: 0;
+      padding: 0 0.3em 0.6em;
+      float: left;
+      text-align: right;
+    }
+    .dice-stats dt { 
+      width: 60%;
+    }
+    .dice-stats dd { 
+      width: 40%;
+    }
+.dice-stats ul { 
+  padding: 0 0 0 25px;
+  list-style-image: url(../img/dices-bl.png);
+  line-height: 1.2em;
+  margin: 1.2em 0 0 0;
+  font-size: 0.9em;
+}
+
+.dice-stats ul li { 
+  padding: 0.2em 0;
+}

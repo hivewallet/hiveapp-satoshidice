@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Satoshi Dice</title>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/controllers.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="SatoshiDice" ng-controller="ScreenCtrl" ng-init="pushView('bet-list')">
+    
+    <div class="screen" ng-class="getScreenClass('bet-list')" ng-controller="BetListCtrl">
+      <div class="bet-list">
+        <div class="item" ng-repeat="bet in bets">
+          <div class="left">
+            &lt;64,0000
+            <br />
+            97,6553%
+            <br />
+            x1,0044
+          </div>
+          <div class="center">
+            Bet Amount
+            <input type="text" ng-model="bet.betAmount" ng-blur="updateBet(bet)"/>
+            <span class="small">+0.0005 tx fee/bet</span>
+          </div>
+          <div class="right">
+            + 0.0000 (0)
+            <br />
+            - 0.0005 (1)
+            <br />
+            - 0.0005 (1)
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="bet-summary">
+        <div class="left">
+          SatoshiDICE!
+        </div>
+        <div class="center" ng-click="placeBet()">
+          <img src="img/dices.png"/>
+          Roll Dice
+        </div>
+        <div class="right">
+          to bet: {{totalBets}}
+          <span class="small">chance for 0.657898221</span>
+          <i class="icon-eye-open" ng-click="pushView('dice-stats')"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="screen" ng-class="getScreenClass('dice-stats')" ng-controller="StatsCtrl">
+      <div class="dice-stats">
+        <div class="left">
+          <div class="box">
+            <h3>Career Stats</h3>
+            <dl>
+              <dt>Win</dt>
+              <dd class="green-cl">+ 0.0045</dd>
+              <dt>Loss</dt>
+              <dd class="red-cl">- 0.0012</dd>
+              <dt>Performance</dt>
+              <dd class="green-cl">+ 0.0033</dd>
+            </dl>
+            <h3>Session Stats</h3>
+            <dl>
+              <dt>Win</dt>
+              <dd class="green-cl">+ 0.0045</dd>
+              <dt>Loss</dt>
+              <dd class="red-cl">- 0.0012</dd>
+              <dt>Performance</dt>
+              <dd class="green-cl">+ 0.0033</dd>
+            </dl>
+          </div>
+          <span class="btn" ng-click="popView()">Back</span>
+          <span class="btn">Clear Stats</span>
+        </div>
+        <div class="right">
+          <div class="box">
+            <h3>Event Log</h3>
+            <ul>
+              <li>Placed bet!</li>
+              <li>Sent 0.0105btc</li>
+              <li>Win! +0.004441594 Lucky#24728</li>
+              <li>Received 0.01147198btc</li>
+              <li>Placed Bet!</li>
+              <li>Sent 0.0305btc</li>
+              <li>Win.Lose -0.01651515 Lucky#17368</li>
+              <li>Received 0.01337565btc</li>
+              <li>Received 0.0000546btc</li>
+              <li>Placed bet!</li>
+              <li>Sent 0.0105btc</li>
+              <li>Received 0.01147198btc</li>
+              <li>Placed Bet!</li>
+              <li>Sent 0.0305btc</li>
+              <li>Win.Lose -0.01651515 Lucky#17368</li>
+              <li>Received 0.01337565btc</li>
+              <li>Received 0.0000546btc</li>
+              
+              
+              <li>Placed bet!</li>
+              <li>Sent 0.0105btc</li>
+              <li>Win! +0.004441594 Lucky#24728</li>
+              <li>Received 0.01147198btc</li>
+              <li>Placed Bet!</li>
+              <li>Sent 0.0305btc</li>
+              <li>Win.Lose -0.01651515 Lucky#17368</li>
+              <li>Received 0.01337565btc</li>
+              <li>Received 0.0000546btc</li>
+              <li>Placed bet!</li>
+              <li>Sent 0.0105btc</li>
+              <li>Received 0.01147198btc</li>
+              <li>Placed Bet!</li>
+              <li>Sent 0.0305btc</li>
+              <li>Win.Lose -0.01651515 Lucky#17368</li>
+              <li>Received 0.01337565btc</li>
+              <li>Received 0.0000546btc</li>
+              <li>Placed bet!</li>
+              <li>Sent 0.0105btc</li>
+              <li>Win! +0.004441594 Lucky#24728</li>
+              <li>Received 0.01147198btc</li>
+              <li>Placed Bet!</li>
+              <li>Sent 0.0305btc</li>
+              <li>Win.Lose -0.01651515 Lucky#17368</li>
+              <li>Received 0.01337565btc</li>
+              <li>Received 0.0000546btc</li>
+              <li>Placed bet!</li>
+              <li>Sent 0.0105btc</li>
+              <li>Received 0.01147198btc</li>
+              <li>Placed Bet!</li>
+              <li>Sent 0.0305btc</li>
+              <li>Win.Lose -0.01651515 Lucky#17368</li>
+              <li>Received 0.01337565btc</li>
+              <li>Received 0.0000546btc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
